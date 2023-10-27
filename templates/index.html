@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carte de température mondiale</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Inclure la bibliothèque Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <h1>Carte de Température Mondiale</h1>
+    
+    <div class="filters">
+        <label for="temperatureFilter">Filtrer par température :</label>
+        <input type="range" id="temperatureFilter" min="-10" max="40" value="10">
+        <span id="temperatureValue">10°C</span>
+
+        <label for="datePicker">Sélectionner une date :</label>
+        <input type="date" id="datePicker">
+    </div>
+
+    <div id="map" style="height: 600px; width: 1000px;"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
